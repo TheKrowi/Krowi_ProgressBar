@@ -12,7 +12,7 @@ This library was created to make a reusable progress bar that can show up to 4 d
 
 ## Example
 ```lua
-local progressBar = LibStub("Krowi_ProgressBar-1.1"):New(GameTooltip);
+local progressBar = LibStub("Krowi_ProgressBar-2.0"):New(GameTooltip);
 local preHookFunction = progressBar.Show;
 function progressBar:Show(gameTooltip, min, max, value1, value2, value3, value4, color1, color2, color3, color4, text)
 	self:Reset();

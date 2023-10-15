@@ -1,4 +1,4 @@
-<!-- 
+--[[
 	Krowi's Progress Bar License
 		Copyright ©2020 The contents of this library, excluding third-party resources, are
 		copyrighted to their authors with all rights reserved.
@@ -16,9 +16,16 @@
 
 		All rights not explicitly addressed in this license are reserved by
 		the copyright holders.
- -->
+]]
 
-<Ui>
-	<Script file="Krowi_ProgressBar-1.1.lua"/>
-	<Include file="Krowi_ProgressBarTemplate-1.1.xml"/>
-</Ui>
+local lib = LibStub:NewLibrary("Krowi_ProgressBar-2.0", 1);
+
+if not lib then
+	return;
+end
+
+local numFrames = 0;
+function lib:GetNew(parent)
+	numFrames = numFrames + 1;
+	return CreateFrame("Frame", "Krowi_ProgressBar" .. numFrames, parent or UIParent, "Krowi_ProgressBar_Template");
+end

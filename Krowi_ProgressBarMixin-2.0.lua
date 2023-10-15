@@ -18,13 +18,18 @@
 		the copyright holders.
 ]]
 
-local lib = LibStub:NewLibrary("Krowi_ProgressBar-1.1", 1);
+Krowi_ProgressBarMixin = {};
 
-if not lib then
-	return;
+function Krowi_ProgressBarMixin:OnLoad()
+	self.OffsetX = 4;
+	self.OffsetY = 5;
 end
 
-local function Resize(self)
+function Krowi_ProgressBarMixin:OnSizeChanged()
+	self:Resize();
+end
+
+function Krowi_ProgressBarMixin:Resize()
 	self.Background:ClearAllPoints();
 	self.Background:SetPoint("TOPLEFT", self.BorderLeftTop, "BOTTOMRIGHT", -self.OffsetX, self.OffsetY);
 	self.Background:SetPoint("BOTTOMRIGHT", self.BorderRightBottom, "TOPLEFT", self.OffsetX, -self.OffsetY);
@@ -57,46 +62,21 @@ local function Resize(self)
 	end
 end
 
-local numFrames = 0; -- Local ID for naming, starts at 0 and will increment if a new frame is added
-
-lib.__index = lib; -- Used to support OOP like code
-function lib:New(parent)
-	-- Increment ID
-	numFrames = numFrames + 1;
-
-	local frame = CreateFrame("Frame", "Krowi_ProgressBar" .. numFrames, parent, "Krowi_ProgressBar_Template");
-	setmetatable(frame, setmetatable(lib, getmetatable(frame)));
-
-	frame:SetScript("OnSizeChanged", function()
-		Resize(frame);
-	end);
-	hooksecurefunc(frame, "SetHeight", function(self, height, ignore)
-		if not ignore then
-			self.CustomHeight = height;
-		end
-	end);
-
-	self.OffsetX = 4;
-	self.OffsetY = 5;
-
-    return frame;
-end
-
-function lib:AdjustOffsets(x, y)
+function Krowi_ProgressBarMixin:AdjustOffsets(x, y)
 	self.OffsetX = x;
 	self.OffsetY = y;
 end
 
-function lib:SetMinMaxValues(min, max)
+function Krowi_ProgressBarMixin:SetMinMaxValues(min, max)
 	self.Min = min;
 	self.Max = max;
 end
 
-function lib:SetValues(value1, value2, value3, value4)
+function Krowi_ProgressBarMixin:SetValues(value1, value2, value3, value4)
 	self.Values = {value1, value2, value3, value4};
 end
 
-function lib:SetColors(color1, color2, color3, color4)
+function Krowi_ProgressBarMixin:SetColors(color1, color2, color3, color4)
 	local black = {R = 0, G = 0, B = 0};
 	color1 = color1 or black;
 	color2 = color2 or black;
@@ -105,11 +85,11 @@ function lib:SetColors(color1, color2, color3, color4)
 	self.Colors = {color1, color2, color3, color4};
 end
 
-function lib:UpdateTextures()
-	Resize(self);
+function Krowi_ProgressBarMixin:UpdateTextures()
+	self:Resize();
 end
 
-function lib:Reset()
+function Krowi_ProgressBarMixin:Reset()
 	self.Min = 0;
 	self.Max = 0;
 	self.Values = {0, 0, 0, 0};
