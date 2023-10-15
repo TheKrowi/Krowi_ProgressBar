@@ -20,13 +20,15 @@
 
 Krowi_ProgressBarMixin = {};
 
+local util = LibStub("Krowi_Util-1.0");
+
 function Krowi_ProgressBarMixin:OnLoad()
 	self.OffsetX = 4;
 	self.OffsetY = 5;
 end
 
 function Krowi_ProgressBarMixin:OnSizeChanged()
-	self:Resize();
+	util.DelayFunction("Krowi_ProgressBar_OnSizeChanged", 0.01, self.Resize, self);
 end
 
 function Krowi_ProgressBarMixin:Resize()
