@@ -1,4 +1,4 @@
-![Retail](https://img.shields.io/badge/Retail-11.2.7-008833?style=for-the-badge) ![Mists](https://img.shields.io/badge/Mists-5.5.2-28ae7e?style=for-the-badge) ![Classic](https://img.shields.io/badge/Classic-1.15.8-c39361?style=for-the-badge)<br>
+![Midnight](https://img.shields.io/badge/Midnight-12.0.0-a335ee?style=for-the-badge) ![Retail](https://img.shields.io/badge/Retail-11.2.7-008833?style=for-the-badge) ![Mists](https://img.shields.io/badge/Mists-5.5.3-28ae7e?style=for-the-badge) ![TBC](https://img.shields.io/badge/TBC-2.5.5-62c907?style=for-the-badge) ![Classic](https://img.shields.io/badge/Classic-1.15.8-c39361?style=for-the-badge)<br>
 [![CurseForge](https://img.shields.io/badge/curseforge-download-F16436?style=for-the-badge&logo=curseforge&logoColor=white)](https://www.curseforge.com/wow/addons/krowi-progress-bar) [![Wago](https://img.shields.io/badge/Wago-Download-c1272d?style=for-the-badge)](https://addons.wago.io/addons/krowi-progress-bar)<br>
 [![Discord](https://img.shields.io/badge/discord-join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/mdBFQJYeQZ) [![PayPal](https://img.shields.io/badge/paypal-donate-002991.svg?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=9QEDV37APQ6YJ)
 
@@ -6,13 +6,13 @@ A reusable progress bar library for World of Warcraft addon development that can
 
 ## Features
 
-### Progress Bar Library (`Krowi_ProgressBar-2.0`)
+### Progress Bar Library (`Krowi_ProgressBar`)
 - **Multi-Value Display**: Show up to 4 different values with individual colors in a single progress bar
 - **Flexible Styling**: Customizable colors for each value segment
 - **Easy Integration**: Simple API for quick implementation
 - **LibStub Support**: Standard LibStub library structure for dependency management
 
-### Game Tooltip Integration (`Krowi_GameTooltipWithProgressBar-2.0`)
+### Game Tooltip Integration (`Krowi_GameTooltipWithProgressBar`)
 - **Tooltip Progress Bars**: Easily add progress bars to game tooltips
 - **Automatic Management**: Automatically handles tooltip show/hide events
 - **Flexible Positioning**: Automatically positions within tooltips
@@ -21,7 +21,7 @@ A reusable progress bar library for World of Warcraft addon development that can
 
 ### Basic Progress Bar
 ```lua
-local ProgressBarLib = LibStub("Krowi_ProgressBar-2.0")
+local ProgressBarLib = LibStub("Krowi_ProgressBar")
 local progressBar = ProgressBarLib:GetNew(parentFrame)
 
 progressBar:SetMinMaxValues(0, 100)
@@ -55,11 +55,11 @@ TooltipProgressBar:Show(
 
 ## API Reference
 
-### Krowi_ProgressBar-2.0
+### Krowi_ProgressBar
 
 #### Creating a Progress Bar
 ```lua
-local ProgressBarLib = LibStub("Krowi_ProgressBar-2.0")
+local ProgressBarLib = LibStub("Krowi_ProgressBar")
 local progressBar = ProgressBarLib:GetNew(parentFrame)
 ```
 
@@ -86,11 +86,11 @@ Colors must be tables with R, G, B keys (values 0-1):
 {R = 1, G = 0.5, B = 0}   -- Orange
 ```
 
-### Krowi_GameTooltipWithProgressBar-2.0
+### Krowi_GameTooltipWithProgressBar
 
 #### Tooltip Integration
 ```lua
-local TooltipProgressBar = LibStub("Krowi_GameTooltipWithProgressBar-2.0")
+local TooltipProgressBar = LibStub("Krowi_GameTooltipWithProgressBar")
 ```
 
 #### Tooltip Functions
@@ -121,4 +121,4 @@ local TooltipProgressBar = LibStub("Krowi_GameTooltipWithProgressBar-2.0")
 - Any scenario requiring visual representation of multiple values
 
 ## Requirements
-- LibStub
+- Krowi_LibMan

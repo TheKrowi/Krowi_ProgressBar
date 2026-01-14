@@ -2,13 +2,13 @@ A reusable progress bar library for World of Warcraft addon development that can
 
 ## Features
 
-### Progress Bar Library (`Krowi_ProgressBar-2.0`)
+### Progress Bar Library (`Krowi_ProgressBar`)
 - **Multi-Value Display**: Show up to 4 different values with individual colors in a single progress bar
 - **Flexible Styling**: Customizable colors for each value segment
 - **Easy Integration**: Simple API for quick implementation
 - **LibStub Support**: Standard LibStub library structure for dependency management
 
-### Game Tooltip Integration (`Krowi_GameTooltipWithProgressBar-2.0`)
+### Game Tooltip Integration (`Krowi_GameTooltipWithProgressBar`)
 - **Tooltip Progress Bars**: Easily add progress bars to game tooltips
 - **Automatic Management**: Automatically handles tooltip show/hide events
 - **Flexible Positioning**: Automatically positions within tooltips
@@ -17,7 +17,7 @@ A reusable progress bar library for World of Warcraft addon development that can
 
 ### Basic Progress Bar
 ```lua
-local ProgressBarLib = LibStub("Krowi_ProgressBar-2.0")
+local ProgressBarLib = LibStub("Krowi_ProgressBar")
 local progressBar = ProgressBarLib:GetNew(parentFrame)
 
 progressBar:SetMinMaxValues(0, 100)
@@ -51,11 +51,11 @@ TooltipProgressBar:Show(
 
 ## API Reference
 
-### Krowi_ProgressBar-2.0
+### Krowi_ProgressBar
 
 #### Creating a Progress Bar
 ```lua
-local ProgressBarLib = LibStub("Krowi_ProgressBar-2.0")
+local ProgressBarLib = LibStub("Krowi_ProgressBar")
 local progressBar = ProgressBarLib:GetNew(parentFrame)
 ```
 
@@ -82,11 +82,11 @@ Colors must be tables with R, G, B keys (values 0-1):
 {R = 1, G = 0.5, B = 0}   -- Orange
 ```
 
-### Krowi_GameTooltipWithProgressBar-2.0
+### Krowi_GameTooltipWithProgressBar
 
 #### Tooltip Integration
 ```lua
-local TooltipProgressBar = LibStub("Krowi_GameTooltipWithProgressBar-2.0")
+local TooltipProgressBar = LibStub("Krowi_GameTooltipWithProgressBar")
 ```
 
 #### Tooltip Functions
@@ -117,4 +117,4 @@ local TooltipProgressBar = LibStub("Krowi_GameTooltipWithProgressBar-2.0")
 - Any scenario requiring visual representation of multiple values
 
 ## Requirements
-- LibStub
+- Krowi_LibMan

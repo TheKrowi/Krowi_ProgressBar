@@ -5,7 +5,7 @@
 
 ## Interface: 120000, 110207, 50503, 20505, 11508
 ## Title: Krowi's |cFF1D92C2Progress Bar|r
-## Version: 2.0
+## Version: 2.1
 ## Author: Krowi
 ## Notes: A progress bar library for displaying multi-segment bars with up to 4 stacked values and customizable colors, including GameTooltip integration
 ## X-Slug: krowi-progress-bar
