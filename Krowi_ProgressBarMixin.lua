@@ -1,22 +1,14 @@
 --[[
     Copyright (c) 2023 Krowi
-
-    All Rights Reserved unless otherwise explicitly stated.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
+    Licensed under the terms of the LICENSE file in this repository.
 ]]
 
 ---@diagnostic disable: undefined-global
 
-Krowi_ProgressBarMixin = {};
+local sub, parent = KROWI_LIBMAN:NewSubmodule('Mixin', 0)
+if not sub or not parent then return end
 
-local util = LibStub("Krowi_Util-1.0");
+Krowi_ProgressBarMixin = {};
 
 function Krowi_ProgressBarMixin:OnLoad()
 	self.OffsetX = 4;
@@ -24,13 +16,13 @@ function Krowi_ProgressBarMixin:OnLoad()
 end
 
 function Krowi_ProgressBarMixin:OnSizeChanged()
-	util.DelayFunction("Krowi_ProgressBar_OnSizeChanged", 0.01, self.Resize, self);
+	parent.Util.DelayFunction('Krowi_ProgressBar_OnSizeChanged', 0.01, self.Resize, self);
 end
 
 function Krowi_ProgressBarMixin:Resize()
 	self.Background:ClearAllPoints();
-	self.Background:SetPoint("TOPLEFT", self.BorderLeftTop, "BOTTOMRIGHT", -self.OffsetX, self.OffsetY);
-	self.Background:SetPoint("BOTTOMRIGHT", self.BorderRightBottom, "TOPLEFT", self.OffsetX, -self.OffsetY);
+	self.Background:SetPoint('TOPLEFT', self.BorderLeftTop, 'BOTTOMRIGHT', -self.OffsetX, self.OffsetY);
+	self.Background:SetPoint('BOTTOMRIGHT', self.BorderRightBottom, 'TOPLEFT', self.OffsetX, -self.OffsetY);
 
 	local offset = self:GetWidth() / 224;
 	local barWidth = self.Background:GetWidth() + offset;
@@ -42,16 +34,16 @@ function Krowi_ProgressBarMixin:Resize()
 		self.Fill[i]:SetWidth(width);
 		self.Fill[i]:ClearAllPoints();
 		if i == 1 then
-			self.Fill[i]:SetPoint("TOPLEFT", self.BorderLeftTop, "BOTTOMRIGHT", -self.OffsetX, self.OffsetY);
-			self.Fill[i]:SetPoint("BOTTOMLEFT", self.BorderLeftBottom, "TOPRIGHT", -self.OffsetX, -self.OffsetY);
+			self.Fill[i]:SetPoint('TOPLEFT', self.BorderLeftTop, 'BOTTOMRIGHT', -self.OffsetX, self.OffsetY);
+			self.Fill[i]:SetPoint('BOTTOMLEFT', self.BorderLeftBottom, 'TOPRIGHT', -self.OffsetX, -self.OffsetY);
 			if width == 0 then
-				self.Fill[i]:SetPoint("RIGHT", self.BorderLeftMiddle, "RIGHT", -self.OffsetX, 0);
+				self.Fill[i]:SetPoint('RIGHT', self.BorderLeftMiddle, 'RIGHT', -self.OffsetX, 0);
 			end
 		else
-			self.Fill[i]:SetPoint("TOPLEFT", self.Fill[i - 1], "TOPRIGHT");
-			self.Fill[i]:SetPoint("BOTTOMLEFT", self.Fill[i - 1], "BOTTOMRIGHT");
+			self.Fill[i]:SetPoint('TOPLEFT', self.Fill[i - 1], 'TOPRIGHT');
+			self.Fill[i]:SetPoint('BOTTOMLEFT', self.Fill[i - 1], 'BOTTOMRIGHT');
 			if width == 0 then
-				self.Fill[i]:SetPoint("RIGHT", self.Fill[i - 1]);
+				self.Fill[i]:SetPoint('RIGHT', self.Fill[i - 1]);
 			end
 		end
 

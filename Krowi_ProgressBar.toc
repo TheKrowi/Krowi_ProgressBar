@@ -1,27 +1,15 @@
 #
 #    Copyright (c) 2023 Krowi
-#
-#    All Rights Reserved unless otherwise explicitly stated.
-#
-#    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#    SOFTWARE.
+#    Licensed under the terms of the LICENSE file in this repository.
 #
 
-## Interface: 110207, 50502, 11508
+## Interface: 120000, 110207, 50503, 20505, 20504, 20503, 20502, 20501, 11508
 ## Title: Krowi's |cFF1D92C2Progress Bar|r
-## Version: 2.0.1
+## Version: 2.0
 ## Author: Krowi
 ## Notes: A progress bar library for displaying multi-segment bars with up to 4 stacked values and customizable colors, including GameTooltip integration
-## X-Discord-Invite-Link: https://discord.gg/mdBFQJYeQZ
-## X-Discord-Server-Name: Krowi's Addons
-## X-CurseForge: https://www.curseforge.com/wow/addons/krowi-progress-bar
-## X-Curse-Project-ID: 1400033
-## X-Wago: https://addons.wago.io/addons/krowi-progress-bar
+## X-Slug: krowi-progress-bar
+## X-CurseForge-ID: 1400033
 ## X-Wago-ID: 56n9nmN9
 
-Krowi_ProgressBar-2.0.xml
+Krowi_ProgressBar.xml
