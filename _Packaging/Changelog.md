@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.2 - 2026-01-31
+### Fixed
+- Potential fix for `attempt to perform arithmetic on a secret value` error
+
 ## 2.1 - 2026-01-14
 ### Changed
 - Refactored file naming structure, removing "-2.0" suffixes from all core files
