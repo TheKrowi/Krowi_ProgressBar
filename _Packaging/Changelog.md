@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 2.3 - 2026-02-05
+## 2.3 - 2026-05-21
 ### Fixed
 - Taint error `attempt to compare a secret number value` caused by the progress bar being a child of Blizzard's `GameTooltip`. The library now owns a dedicated `Krowi_ProgressBarTooltip` frame (`<GameTooltip inherits="GameTooltipTemplate" parent="UIParent">`), and the progress bar is a permanent child of that frame. Blizzard's `GameTooltip` is never touched.
 ### Changed
